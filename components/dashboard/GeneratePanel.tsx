@@ -16,7 +16,9 @@ export default function GeneratePanel({ credits, hasCustomVoice }: GeneratePanel
   const router = useRouter();
   const [scenario, setScenario] = useState('');
   const [mode, setMode] = useState<GenerationMode>('future');
-  const [selectedVoiceType, setSelectedVoiceType] = useState<'custom' | 'preset'>('preset');
+  const [selectedVoiceType, setSelectedVoiceType] = useState<'custom' | 'preset'>(
+    hasCustomVoice ? 'custom' : 'preset'
+  );
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const [showVoiceSetup, setShowVoiceSetup] = useState(false);

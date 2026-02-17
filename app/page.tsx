@@ -8,13 +8,13 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white">
-      <nav className="border-b border-gray-200">
+      <nav className="border-b border-gray-100 bg-white/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+          <div className="flex justify-between items-center h-20">
             <div className="text-2xl font-bold text-gray-900">EchoSelf</div>
             <button
               onClick={() => setIsLoginModalOpen(true)}
-              className="px-6 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
+              className="px-6 py-2.5 text-sm font-semibold text-gray-700 hover:text-gray-900 transition-colors"
             >
               Login
             </button>
@@ -22,25 +22,26 @@ export default function Home() {
         </div>
       </nav>
 
-      <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white py-20 sm:py-32">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 tracking-tight mb-6">
-              Hear the Voice of Your Future Self
+      <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 via-white to-white pt-24 pb-32 sm:pt-32 sm:pb-40">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-100 via-transparent to-transparent opacity-50"></div>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="text-center max-w-4xl mx-auto">
+            <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold text-gray-900 tracking-tight mb-8 leading-[1.1]">
+              Hear the Voice of<br />Your Future Self
             </h1>
-            <p className="text-xl sm:text-2xl text-gray-600 max-w-3xl mx-auto mb-10 leading-relaxed">
-              Transform your aspirations into immersive audio experiences. Practice identity rehearsal through AI-generated scripts spoken in your own voice.
+            <p className="text-xl sm:text-2xl text-gray-600 max-w-2xl mx-auto mb-12 leading-relaxed">
+              Practice identity rehearsal through AI-generated scripts spoken in your own voice. Transform aspirations into embodied experience.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
               <button
                 onClick={() => setIsLoginModalOpen(true)}
-                className="px-8 py-4 bg-gray-900 text-white rounded-lg font-semibold text-lg hover:bg-gray-800 transition-colors shadow-lg"
+                className="px-10 py-5 bg-gray-900 text-white rounded-xl font-semibold text-lg hover:bg-gray-800 transition-all shadow-xl hover:shadow-2xl"
               >
-                Generate Your Future Message
+                Start Free
               </button>
               <button
                 onClick={() => setIsLoginModalOpen(true)}
-                className="px-8 py-4 bg-white text-gray-900 border-2 border-gray-300 rounded-lg font-semibold text-lg hover:border-gray-400 transition-colors"
+                className="px-10 py-5 bg-white text-gray-900 border-2 border-gray-200 rounded-xl font-semibold text-lg hover:border-gray-900 transition-all"
               >
                 Login
               </button>
@@ -49,165 +50,64 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-24 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-              Goals Stay Abstract Without Reinforcement
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+              Two Powerful Modes
             </h2>
-            <p className="text-lg text-gray-600 leading-relaxed mb-6">
-              Written affirmations lack the psychological depth needed for true identity shift. Hearing your own voice articulate your future creates stronger neural pathways and deeper internalization.
-            </p>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              EchoSelf turns aspirational thinking into embodied experience through personalized, immersive audio.
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Choose how you want to experience your transformation
             </p>
           </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 text-center mb-12">
-            How It Works
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-white rounded-xl p-6 shadow-sm">
-              <div className="w-12 h-12 bg-gray-900 text-white rounded-lg flex items-center justify-center text-xl font-bold mb-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div className="group bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-2xl p-10 hover:border-gray-900 hover:shadow-2xl transition-all duration-300">
+              <div className="w-16 h-16 bg-gray-900 text-white rounded-xl flex items-center justify-center text-2xl font-bold mb-6">
                 1
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                Secure Email Login
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Future Self Message
               </h3>
-              <p className="text-gray-600">
-                Access your account with a one-time password sent to your email. No passwords to remember.
+              <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                Hear your future self speak directly to you. AI crafts a deeply personal narrative based on your specific goals, delivered in your own voice.
               </p>
+              <ul className="space-y-3">
+                <li className="flex items-start text-gray-700">
+                  <div className="w-1.5 h-1.5 bg-gray-900 rounded-full mt-2.5 mr-3 flex-shrink-0"></div>
+                  Concrete achievements and outcomes
+                </li>
+                <li className="flex items-start text-gray-700">
+                  <div className="w-1.5 h-1.5 bg-gray-900 rounded-full mt-2.5 mr-3 flex-shrink-0"></div>
+                  Emotional transformation focus
+                </li>
+                <li className="flex items-start text-gray-700">
+                  <div className="w-1.5 h-1.5 bg-gray-900 rounded-full mt-2.5 mr-3 flex-shrink-0"></div>
+                  Grounded, realistic reinforcement
+                </li>
+              </ul>
             </div>
-            <div className="bg-white rounded-xl p-6 shadow-sm">
-              <div className="w-12 h-12 bg-gray-900 text-white rounded-lg flex items-center justify-center text-xl font-bold mb-4">
+            <div className="group bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-2xl p-10 hover:border-gray-900 hover:shadow-2xl transition-all duration-300">
+              <div className="w-16 h-16 bg-gray-900 text-white rounded-xl flex items-center justify-center text-2xl font-bold mb-6">
                 2
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                Record or Select Your Voice
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Affirmations In Your Voice
               </h3>
-              <p className="text-gray-600">
-                Clone your voice with a brief recording or choose from premium preset voices.
+              <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                Generate powerful first-person affirmations tailored to who you're becoming. Short, rhythmic, and emotionally grounded statements in your own voice.
               </p>
-            </div>
-            <div className="bg-white rounded-xl p-6 shadow-sm">
-              <div className="w-12 h-12 bg-gray-900 text-white rounded-lg flex items-center justify-center text-xl font-bold mb-4">
-                3
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                Describe Your Future Scenario
-              </h3>
-              <p className="text-gray-600">
-                Provide details about your desired future. Our AI crafts a compelling first-person script.
-              </p>
-            </div>
-            <div className="bg-white rounded-xl p-6 shadow-sm">
-              <div className="w-12 h-12 bg-gray-900 text-white rounded-lg flex items-center justify-center text-xl font-bold mb-4">
-                4
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                Generate & Replay Immersive Audio
-              </h3>
-              <p className="text-gray-600">
-                Listen to your future self speak. Save to your private library and replay anytime.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 text-center mb-12">
-            Features
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-gray-50 rounded-xl p-6 shadow-sm">
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                AI Script Generation
-              </h3>
-              <p className="text-gray-600">
-                Intelligent scripts tailored to your specific future scenario, written in authentic first-person perspective.
-              </p>
-            </div>
-            <div className="bg-gray-50 rounded-xl p-6 shadow-sm">
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                Private Voice Cloning
-              </h3>
-              <p className="text-gray-600">
-                Your voice stays private. Stored securely and used only for your personal audio generation.
-              </p>
-            </div>
-            <div className="bg-gray-50 rounded-xl p-6 shadow-sm">
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                Preset Voice Option
-              </h3>
-              <p className="text-gray-600">
-                Prefer not to clone your voice? Choose from professionally recorded preset voices.
-              </p>
-            </div>
-            <div className="bg-gray-50 rounded-xl p-6 shadow-sm">
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                Secure Audio Library
-              </h3>
-              <p className="text-gray-600">
-                All generated audio is saved privately. Access your collection anytime, anywhere.
-              </p>
-            </div>
-            <div className="bg-gray-50 rounded-xl p-6 shadow-sm">
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                Credit-Based System
-              </h3>
-              <p className="text-gray-600">
-                No subscription required. Purchase credits as needed and use them at your own pace.
-              </p>
-            </div>
-            <div className="bg-gray-50 rounded-xl p-6 shadow-sm">
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                Full Voice Deletion Control
-              </h3>
-              <p className="text-gray-600">
-                Delete your cloned voice data at any time with one click. Complete control over your data.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 text-center mb-8">
-              Your Privacy Matters
-            </h2>
-            <div className="bg-white rounded-xl p-8 shadow-sm">
-              <ul className="space-y-4">
-                <li className="flex items-start">
-                  <svg className="w-6 h-6 text-gray-900 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-gray-700 text-lg">Your voice is private and stored securely with enterprise-grade encryption</span>
+              <ul className="space-y-3">
+                <li className="flex items-start text-gray-700">
+                  <div className="w-1.5 h-1.5 bg-gray-900 rounded-full mt-2.5 mr-3 flex-shrink-0"></div>
+                  20-25 identity-based affirmations
                 </li>
-                <li className="flex items-start">
-                  <svg className="w-6 h-6 text-gray-900 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-gray-700 text-lg">You can delete your voice data at any time with immediate effect</span>
+                <li className="flex items-start text-gray-700">
+                  <div className="w-1.5 h-1.5 bg-gray-900 rounded-full mt-2.5 mr-3 flex-shrink-0"></div>
+                  Clear, confident, concise
                 </li>
-                <li className="flex items-start">
-                  <svg className="w-6 h-6 text-gray-900 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-gray-700 text-lg">Your voice is never reused for other purposes or shared with third parties</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="w-6 h-6 text-gray-900 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-gray-700 text-lg">Secure AI infrastructure with industry-standard compliance protocols</span>
+                <li className="flex items-start text-gray-700">
+                  <div className="w-1.5 h-1.5 bg-gray-900 rounded-full mt-2.5 mr-3 flex-shrink-0"></div>
+                  Daily repetition optimized
                 </li>
               </ul>
             </div>
@@ -215,61 +115,238 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-8">
-              Pricing
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+              Why Voice Matters
             </h2>
-            <div className="bg-gray-50 rounded-xl p-8 shadow-sm">
-              <div className="space-y-4 mb-8">
-                <div className="flex items-center justify-center text-lg text-gray-700">
-                  <svg className="w-6 h-6 text-gray-900 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  5 free credits on signup
-                </div>
-                <div className="flex items-center justify-center text-lg text-gray-700">
-                  <svg className="w-6 h-6 text-gray-900 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  1 audio generation = 5 credits
-                </div>
-                <div className="flex items-center justify-center text-lg text-gray-700">
-                  <svg className="w-6 h-6 text-gray-900 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  Credit bundles available for purchase
-                </div>
-                <div className="flex items-center justify-center text-lg text-gray-700">
-                  <svg className="w-6 h-6 text-gray-900 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  No subscription required
-                </div>
+            <p className="text-lg text-gray-600 leading-relaxed mb-6">
+              Written affirmations lack the psychological depth needed for true identity shift. Hearing your own voice articulate your future creates stronger neural pathways and deeper internalization.
+            </p>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              EchoSelf turns aspirational thinking into embodied experience.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 text-center mb-16">
+            How It Works
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-all">
+              <div className="w-14 h-14 bg-gray-900 text-white rounded-xl flex items-center justify-center text-2xl font-bold mb-6">
+                1
               </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                Secure Email Login
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                One-time password sent to your email. No passwords to remember.
+              </p>
+            </div>
+            <div className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-all">
+              <div className="w-14 h-14 bg-gray-900 text-white rounded-xl flex items-center justify-center text-2xl font-bold mb-6">
+                2
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                Record Your Voice
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                60-second voice sample creates your personal voice clone, or choose a preset.
+              </p>
+            </div>
+            <div className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-all">
+              <div className="w-14 h-14 bg-gray-900 text-white rounded-xl flex items-center justify-center text-2xl font-bold mb-6">
+                3
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                Describe Your Vision
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                AI crafts a compelling script based on your specific future scenario.
+              </p>
+            </div>
+            <div className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-all">
+              <div className="w-14 h-14 bg-gray-900 text-white rounded-xl flex items-center justify-center text-2xl font-bold mb-6">
+                4
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                Listen & Replay
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Immersive audio saved to your private library. Replay anytime.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-gray-900 text-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-8">
-            The future version of you is waiting.
+      <section className="py-24 bg-gradient-to-b from-blue-50/30 to-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 text-center mb-6">
+              Your Voice, Your Control
+            </h2>
+            <p className="text-lg text-gray-600 text-center mb-12">
+              Complete privacy and transparency. You own your data.
+            </p>
+            <div className="bg-white/80 backdrop-blur-sm border border-gray-200 rounded-2xl p-10 shadow-sm">
+              <ul className="space-y-6">
+                <li className="flex items-start">
+                  <div className="w-6 h-6 bg-gray-900 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div className="ml-4">
+                    <p className="text-gray-900 font-semibold text-lg mb-1">Private & Encrypted</p>
+                    <p className="text-gray-600">Your voice is stored securely with enterprise-grade encryption</p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-6 h-6 bg-gray-900 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div className="ml-4">
+                    <p className="text-gray-900 font-semibold text-lg mb-1">Delete Anytime</p>
+                    <p className="text-gray-600">One-click voice deletion with immediate effect. Complete control.</p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-6 h-6 bg-gray-900 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div className="ml-4">
+                    <p className="text-gray-900 font-semibold text-lg mb-1">Never Shared</p>
+                    <p className="text-gray-600">Your voice is never reused or shared with third parties</p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-6 h-6 bg-gray-900 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div className="ml-4">
+                    <p className="text-gray-900 font-semibold text-lg mb-1">Secure Infrastructure</p>
+                    <p className="text-gray-600">Industry-standard compliance and data protection protocols</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+              Simple Pricing
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              No subscription. No commitment. Purchase credits as you need them.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
+            <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-gray-300 transition-all">
+              <div className="text-center">
+                <p className="text-sm font-semibold text-gray-600 uppercase tracking-wide mb-2">Starter</p>
+                <p className="text-5xl font-bold text-gray-900 mb-2">$4.99</p>
+                <p className="text-gray-600 mb-6">10 Credits</p>
+                <div className="space-y-3 mb-8">
+                  <p className="text-gray-700 flex items-center justify-center">
+                    <span className="w-1.5 h-1.5 bg-gray-900 rounded-full mr-2"></span>
+                    2 messages
+                  </p>
+                  <p className="text-gray-700 flex items-center justify-center">
+                    <span className="w-1.5 h-1.5 bg-gray-900 rounded-full mr-2"></span>
+                    Try both modes
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="bg-gray-900 text-white border-2 border-gray-900 rounded-2xl p-8 shadow-2xl transform scale-105 relative">
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-white text-gray-900 px-4 py-1 rounded-full text-sm font-semibold">
+                Most Popular
+              </div>
+              <div className="text-center">
+                <p className="text-sm font-semibold text-gray-300 uppercase tracking-wide mb-2">Growth</p>
+                <p className="text-5xl font-bold mb-2">$19</p>
+                <p className="text-gray-300 mb-6">50 Credits</p>
+                <div className="space-y-3 mb-8">
+                  <p className="text-gray-200 flex items-center justify-center">
+                    <span className="w-1.5 h-1.5 bg-white rounded-full mr-2"></span>
+                    10 messages
+                  </p>
+                  <p className="text-gray-200 flex items-center justify-center">
+                    <span className="w-1.5 h-1.5 bg-white rounded-full mr-2"></span>
+                    Best value
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-gray-300 transition-all">
+              <div className="text-center">
+                <p className="text-sm font-semibold text-gray-600 uppercase tracking-wide mb-2">Pro</p>
+                <p className="text-5xl font-bold text-gray-900 mb-2">$34</p>
+                <p className="text-gray-600 mb-6">100 Credits</p>
+                <div className="space-y-3 mb-8">
+                  <p className="text-gray-700 flex items-center justify-center">
+                    <span className="w-1.5 h-1.5 bg-gray-900 rounded-full mr-2"></span>
+                    20 messages
+                  </p>
+                  <p className="text-gray-700 flex items-center justify-center">
+                    <span className="w-1.5 h-1.5 bg-gray-900 rounded-full mr-2"></span>
+                    Maximum savings
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="text-center">
+            <div className="inline-flex items-center gap-2 bg-gray-50 px-6 py-3 rounded-xl border border-gray-200">
+              <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span className="text-gray-700 font-medium">5 free credits on signup • 1 message = 5 credits</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-32 bg-gray-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-800 via-gray-900 to-gray-900"></div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
+            The future version of you<br />is waiting.
           </h2>
+          <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+            Start practicing your transformation today. First message is free.
+          </p>
           <button
             onClick={() => setIsLoginModalOpen(true)}
-            className="px-10 py-4 bg-white text-gray-900 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors shadow-lg"
+            className="px-12 py-5 bg-white text-gray-900 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all shadow-2xl hover:scale-105"
           >
-            Get Started
+            Get Started Free
           </button>
         </div>
       </section>
 
-      <footer className="py-8 border-t border-gray-200">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-600">
-          <p>&copy; 2026 EchoSelf. All rights reserved.</p>
+      <footer className="py-12 bg-white border-t border-gray-100">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div className="text-2xl font-bold text-gray-900">EchoSelf</div>
+            <p className="text-gray-600">&copy; 2026 EchoSelf. All rights reserved.</p>
+          </div>
         </div>
       </footer>
 

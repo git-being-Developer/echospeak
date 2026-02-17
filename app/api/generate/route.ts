@@ -107,26 +107,32 @@ Keep it under 600 words.
 End with a strong reinforcing closing line.`
         : `You write powerful first-person affirmations.
 
-No storytelling.
-No cinematic description.
-No filler.
+No numbering.
+No bullet points.
+No list formatting.
+No '1.' or '2.' or '-' prefixes.
+Do not include any numeric markers.
 
 Write 20–25 affirmations.
-Each line short.
+Each affirmation must be on its own line.
+Plain text only.
+No extra commentary.
+No titles.
+No headers.
+
+Tone:
+Short.
 Clear.
 Identity-based.
 Confident.
 Grounded.
 
-Avoid exaggerated wealth claims.
-Avoid unrealistic promises.
+Avoid exaggerated claims.
+Avoid unrealistic wealth promises.
 Avoid repetition.
+Keep sentences concise.
 
-Tone:
-Strong.
-Calm.
-Certain.
-Concise.`;
+Return text only.`;
 
     const userPrompt =
       generationMode === 'future'

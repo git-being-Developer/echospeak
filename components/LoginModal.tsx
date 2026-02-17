@@ -121,7 +121,7 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
                 placeholder="you@example.com"
                 required
                 disabled={isLoading}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent text-gray-900 placeholder-gray-400"
               />
             </div>
 
@@ -160,7 +160,7 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
                 required
                 maxLength={6}
                 disabled={isLoading}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent text-center text-2xl tracking-widest"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent text-center text-2xl tracking-widest text-gray-900 placeholder-gray-400"
               />
             </div>
 
