@@ -1,6 +1,8 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { createClient } from '@/lib/supabase/client';
 
 interface LoginModalProps {
   isOpen: boolean;
@@ -8,29 +10,72 @@ interface LoginModalProps {
 }
 
 export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
+  const router = useRouter();
+  const supabase = createClient();
   const [email, setEmail] = useState('');
   const [otpSent, setOtpSent] = useState(false);
   const [otp, setOtp] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
 
   if (!isOpen) return null;
 
   const handleSendOTP = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Placeholder for Supabase OTP logic
-    console.log('Sending OTP to:', email);
-    setOtpSent(true);
+    setIsLoading(true);
+    setError('');
+    setSuccessMessage('');
+
+    try {
+      const { error } = await supabase.auth.signInWithOtp({
+        email,
+        options: {
+          emailRedirectTo: `${window.location.origin}/auth/callback`,
+        },
+      });
+
+      if (error) throw error;
+
+      setOtpSent(true);
+      setSuccessMessage('Check your email for the 6-digit code!');
+    } catch (err: any) {
+      setError(err.message || 'Failed to send login code');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleVerifyOTP = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Placeholder for Supabase OTP verification
-    console.log('Verifying OTP:', otp);
+    setIsLoading(true);
+    setError('');
+
+    try {
+      const { error } = await supabase.auth.verifyOtp({
+        email,
+        token: otp,
+        type: 'email',
+      });
+
+      if (error) throw error;
+
+      router.push('/dashboard');
+      router.refresh();
+      onClose();
+    } catch (err: any) {
+      setError(err.message || 'Invalid verification code');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleClose = () => {
     setEmail('');
     setOtp('');
     setOtpSent(false);
+    setError('');
+    setSuccessMessage('');
     onClose();
   };
 
@@ -75,14 +120,29 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@example.com"
                 required
+                disabled={isLoading}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent"
               />
             </div>
+
+            {error && (
+              <div className="p-3 bg-red-50 border border-red-200 rounded-lg">
+                <p className="text-sm text-red-800">{error}</p>
+              </div>
+            )}
+
+            {successMessage && (
+              <div className="p-3 bg-green-50 border border-green-200 rounded-lg">
+                <p className="text-sm text-green-800">{successMessage}</p>
+              </div>
+            )}
+
             <button
               type="submit"
-              className="w-full px-6 py-3 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors"
+              disabled={isLoading}
+              className="w-full px-6 py-3 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
             >
-              Send OTP
+              {isLoading ? 'Sending...' : 'Send Login Code'}
             </button>
           </form>
         ) : (
@@ -99,19 +159,33 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
                 placeholder="Enter 6-digit code"
                 required
                 maxLength={6}
+                disabled={isLoading}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent text-center text-2xl tracking-widest"
               />
             </div>
+
+            {error && (
+              <div className="p-3 bg-red-50 border border-red-200 rounded-lg">
+                <p className="text-sm text-red-800">{error}</p>
+              </div>
+            )}
+
             <button
               type="submit"
-              className="w-full px-6 py-3 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors"
+              disabled={isLoading}
+              className="w-full px-6 py-3 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
             >
-              Verify & Continue
+              {isLoading ? 'Verifying...' : 'Verify & Continue'}
             </button>
             <button
               type="button"
-              onClick={() => setOtpSent(false)}
-              className="w-full text-sm text-gray-600 hover:text-gray-900 transition-colors"
+              onClick={() => {
+                setOtpSent(false);
+                setError('');
+                setSuccessMessage('');
+              }}
+              disabled={isLoading}
+              className="w-full text-sm text-gray-600 hover:text-gray-900 transition-colors disabled:opacity-50"
             >
               Use a different email
             </button>
